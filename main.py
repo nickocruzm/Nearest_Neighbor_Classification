@@ -2,10 +2,52 @@ import random
 import time
 import numpy as np
 
+def euclidean_dist(a,b,arr):
+    # Caluculates the distance between the 2 instances a and b.
+    rolling_sum = 0
+    inst_a = arr[a-1]
+    inst_b = arr[b-1]
+    # print(f'a: {inst_a}')
+    # print(f'b: {inst_b}')
+    for i in range(1, len(inst_a)):
+        diff = np.power( inst_a[i] - inst_b[i],2)
+        rolling_sum = rolling_sum + diff
+    return np.sqrt(rolling_sum)
+
+
+        
+        
+    
+
 def leave_one_out_cross_validation(data,current_set,feature_to_add):
-    random.seed(time.time())
-    acc = round(100*random.random(), 3)
-    return acc
+    num_of_instances = len(data)
+    correct_classification = 0
+    neighbors = []
+    for i in range(0,num_of_instances):
+        object_to_classify = data[i][0]
+        
+        for j in range(0,num_of_instances):
+            if(j == i):
+                neighbors.append(float('inf'))
+            else:
+                d = euclidean_dist(i,j,data,)
+                neighbors.append(d)
+        
+
+        loc = neighbors.index(min(neighbors))
+        
+        if(data[i][0] == data[loc][0]):
+            correct_classification = correct_classification + 1
+            
+    return correct_classification/len(data)
+            
+    
+    
+        
+        
+            
+        
+        
 
 def forward_selection(data):
     current_feature_set = list()
@@ -57,7 +99,8 @@ def Backwards_elimination(data):
             print(f'on level {i}, feature {dropped_feature} was dropped, result: {current_features_set}')
             
     print(f'Final Chosen Features using Backwards Elimination: {current_features_set}')      
-            
+
+           
 if __name__ == '__main__':
     print("Welcome to Nicko Martinez's Feature Selection Algorithm")
     feature_num = int(input("Please enter total number of features: "))
@@ -67,11 +110,11 @@ if __name__ == '__main__':
         \t 2) Backward Elimination \n 
     """ )
     algorithm_choice = int(input("Algo Choice: "))
-    
     data = feature_num
     try:
         if(algorithm_choice == 1): forward_selection(data)
         if(algorithm_choice == 2): Backwards_elimination(data)
+        
     finally:
         print("\n \t done")
         
