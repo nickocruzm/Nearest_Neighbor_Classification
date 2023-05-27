@@ -18,8 +18,6 @@ def majority_vote(a, nearest_neighbors):
     else:
         print("TIE")
         return(-1)
-        
-        
 
 def Determine_Accuracy(NODES, feature_subset, k):
         accurate_computations = 0
@@ -63,12 +61,5 @@ def Determine_Accuracy(NODES, feature_subset, k):
                     
                     # finally:
                     #     print("...computing accuracy...")
-                        
-                    
-                    
-                    
-                    
-            
-    
-    
+   
     
