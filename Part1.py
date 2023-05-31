@@ -56,27 +56,30 @@ def Backward_elimination(data):
         if(dropped_feature != None):
             current_features_set.remove(dropped_feature)
             print(f'on level {i}, feature {dropped_feature} was dropped, result: {current_features_set}')
-            
-    print(f'Final Chosen Features using Backwards Elimination: {current_features_set}')      
-            
-if __name__ == '__main__':
-    print("Welcome to Nicko Martinez's Feature Selection Algorithm")
-    feature_num = int(input("Please enter total number of features: "))
-    print("""
-        Type the number of the algorithm you want to run: \n
-        \t 1) Forward Selection \n
-        \t 2) Backward Elimination \n 
-    """ )
-    algorithm_choice = int(input("Algo Choice: "))
     
-    data = feature_num
-    try:
-        if(algorithm_choice == 1): forward_selection(data)
-        if(algorithm_choice == 2): Backward_elimination(data)
-    finally:
-        print("\n \t done")
+    
+    
+    
+            
+print(f'Final Chosen Features using Backwards Elimination: {current_features_set}')      
         
- 
+
+print("Welcome to Nicko Martinez's Feature Selection Algorithm")
+feature_num = int(input("Please enter total number of features: "))
+print("""
+    Type the number of the algorithm you want to run: \n
+    \t 1) Forward Selection \n
+    \t 2) Backward Elimination \n 
+""" )
+algorithm_choice = int(input("Algo Choice: "))
+
+data = feature_num
+try:
+    if(algorithm_choice == 1): forward_selection(data)
+    if(algorithm_choice == 2): Backward_elimination(data)
+finally:
+    print("\n \t done")
     
-    
-    
+
+
+
