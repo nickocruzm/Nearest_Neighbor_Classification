@@ -12,7 +12,7 @@ from Search import *
 #         print(f"nearest_neighbor(s): {node.neighbors[0]['node'].id}, which is class {node.neighbors[0]['node'].TrueLabel}")
 
 if __name__ == '__main__':
-    path = "/Users/nickocruz/Developer/GitHub/Project_2_MachineLearning/datasets/"
+    path = "datasets/"
     fileName_str = input("fileName: ")
     fileName = path + fileName_str
     raw_data = read_data(fileName)
