@@ -12,9 +12,8 @@ from Search import *
 #         print(f"nearest_neighbor(s): {node.neighbors[0]['node'].id}, which is class {node.neighbors[0]['node'].TrueLabel}")
 
 if __name__ == '__main__':
-    path = "dataSets/"
+    path = "/Users/nickocruz/Developer/GitHub/Project_2_MachineLearning/datasets/"
     fileName_str = input("fileName: ")
-    #fileName = "small_test_dataset.txt"
     fileName = path + fileName_str
     raw_data = read_data(fileName)
     
@@ -22,7 +21,7 @@ if __name__ == '__main__':
     Nodes = Data_to_Nodes(normalized_data)
     
     
-    default_Rate = default_accuracy(raw_data)
+    default_Rate = (raw_data)
     print(f'\t {fileName} \n Quantities: Instance = {len(Nodes)}, Features = {len(Nodes[0].features)}  \n default rate: {default_Rate}')
     
 
