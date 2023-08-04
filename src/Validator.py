@@ -13,18 +13,13 @@ class Validator:
         accuracy = 0
         total_instances = len(Nodes)
         
-        
         if new_feature != -1:
             new_subset = feature_subset.copy()
             new_subset.append(new_feature)
-        
         else:
-            new_subset = feature_subset.copy()
-            
+            new_subset = feature_subset.copy()   
         NN_Classifier.compute_distances(Nodes, new_subset)
-        
         accuracy = Validator.Determine_Accuracy(Nodes)
-
         return accuracy
     
     @classmethod

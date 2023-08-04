@@ -21,7 +21,7 @@ if __name__ == '__main__':
     Nodes = Data_to_Nodes(normalized_data)
     
     
-    default_Rate = (raw_data)
+    default_Rate = default_accuracy(raw_data)
     print(f'\t {fileName} \n Quantities: Instance = {len(Nodes)}, Features = {len(Nodes[0].features)}  \n default rate: {default_Rate}')
     
 

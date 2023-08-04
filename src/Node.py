@@ -1,8 +1,8 @@
 class Node:
-    instances = 1
+    _instances = 1
     def __init__(self,data_row):
-        self.id = Node.instances
-        Node.instances += 1
+        self.id = Node._instances
+        Node._instances += 1
         
         self.classification = data_row[0]    # Given Classifications
         self.features = data_row[1:]         # Given Features
@@ -10,7 +10,6 @@ class Node:
         self.neighbors = []                 # neighbors of node formatted as [ {'node': Node object, 'distance': float} ]
                                             # 'node', holds pointer to node object
                                             # 'distance', is the euclidean distance computed
-    
         self.neighbors_sorted = False
         
     def __eq__(self, Other):
