@@ -1,4 +1,4 @@
-# Nearest_Neighbor_Classification
+# Nearest Neighbor Classifier
 
 ## Overview
 
