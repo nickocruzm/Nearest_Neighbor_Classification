@@ -6,11 +6,18 @@ Designed and implemented Nearest-Neighbor Classifier in Python. Using two greedy
 ## Instructions
 
 User must format data as a .txt file, and save data in datasets folder[^1]
-1. User prompted to input filename, file will not be found if not defined by the path variable.
-2. 
+1. User prompted to input filename
+   (file will not be found if not defined by the path variable,       defined in main.py)
+2. If file is found program will output the number of instances, features, and default rate [^2] of the given dataset.
+3. Choose:
+    1. Forward Selection
+    2. Backward Selection
+    3. test subset of features
+  
 
 
 [^1]: If not wanting to place files in the declared path, alter the path (found in main.py)
+[^2]: What the accuracy of classifying instances would be if classifications were done at random.
 
 ## Datasets
 
