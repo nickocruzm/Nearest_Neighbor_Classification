@@ -22,7 +22,7 @@ if __name__ == '__main__':
     
     
     default_Rate = default_accuracy(raw_data)
-    print(f'\t {fileName} \n Quantities: Instance = {len(Nodes)}, Features = {len(Nodes[0].features)}  \n default rate: {default_Rate}')
+    print(f'\t {fileName} \n Quantities: Instances = {len(Nodes)}, Features = {len(Nodes[0].features)}  \n default rate: {default_Rate}')
     
 
     
