@@ -42,7 +42,7 @@ def forward_selection(raw_data, default_accuracy:float=0.0):
             new_feature = j
             if new_feature not in feature_subset:
                 accuracy = Validator.leave_one_out_cross_validation(node_set, feature_subset, new_feature)
-                print(f'current: {feature_subset}, new_feature: {new_feature}, accuracy: {accuracy}')
+                #print(f'current: {feature_subset}, new_feature: {new_feature}, accuracy: {accuracy}')
                 
             if(accuracy >= best_accuracy):
                 best_feature = new_feature
@@ -56,8 +56,8 @@ def forward_selection(raw_data, default_accuracy:float=0.0):
         else:
             last_best_found += 1
         
-        print(f'Level: {i} \n\tBest Feature Subset: {feature_subset} with an accuracy {best_accuracy}')
-    return feature_subset
+        #print(f'Level: {i} \n\tBest Feature Subset: {feature_subset} with an accuracy {best_accuracy}')
+    return feature_subset,best_accuracy
 
 def Backward_elimination(data, Threshold):
     features = len(data[0])

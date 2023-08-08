@@ -30,7 +30,8 @@ if __name__ == '__main__':
     choice = int(input("-> "))
     
     if(choice == 1): 
-        best_features = forward_selection(normalized_data)
+        best_features,best_accuracy = forward_selection(normalized_data)
+        print(f'best subset of features{best_features}, accuracy: {best_accuracy}')
     if(choice == 2):
         all_features = [i for i in range(1,len(Nodes[0].features)+1)]
         accuracy = get_accuracy(Nodes, all_features)
