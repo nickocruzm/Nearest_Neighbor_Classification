@@ -35,6 +35,6 @@ Datasets are read formatted as .txt files, found in the datasets folder. Two tes
       - 1000 Instances
       - 100 Features
 
-If you'd like to know more about me or this project please visit [nickocruzm.com](https:://nickocruzm.com)
+For more information, please visit [nickocruzm.com](https:://nickocruzm.com) , site is in development
 
 
