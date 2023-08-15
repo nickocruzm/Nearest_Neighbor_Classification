@@ -4,13 +4,6 @@ from NN_Classifier import *
 from Node import Node
 from Search import *
 
-# outputs Trace by iterating through a list of node objects. Retrieving the node.id attribute, and nodes.neighbor that is at the top of list.
-# Actual Accuracy is computed in Validator.py
-# def Accuracy_Trace(NODES):
-#     for node in NODES:
-#         print(f'object {node.id} is class {node.TrueLabel}')
-#         print(f"nearest_neighbor(s): {node.neighbors[0]['node'].id}, which is class {node.neighbors[0]['node'].TrueLabel}")
-
 if __name__ == '__main__':
     path = "datasets/"
     fileName_str = input("fileName: ")
@@ -22,16 +15,17 @@ if __name__ == '__main__':
     
     
     default_Rate = default_accuracy(raw_data)
-    print(f'\t {fileName} \n Quantities: Instances = {len(Nodes)}, Features = {len(Nodes[0].features)}  \n default rate: {default_Rate}')
+    print(f'{filename_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
     
 
     
-    print("choose one:\n \t 1. Forward Selection \n\t 2: Backwards Elmination \n\t 3. Test Subset of Features ")
+    print("choose one: \t 1. Forward Selection \t 2: Backwards Elmination \t 3. Test Subset of Features ")
     choice = int(input("-> "))
     
     if(choice == 1): 
         best_features,best_accuracy = forward_selection(normalized_data)
         print(f'best subset of features{best_features}, accuracy: {best_accuracy}')
+
     if(choice == 2):
         all_features = [i for i in range(1,len(Nodes[0].features)+1)]
         accuracy = get_accuracy(Nodes, all_features)
@@ -45,12 +39,13 @@ if __name__ == '__main__':
         print('\t if no input is given, classifier will default to using all features')
         feature_subset_str = input("Feature_subset: ")
         feature_subset = [int(x) for x in feature_subset_str.split()]
-        k = 1
-        
-        # Accuracy
+       
+        # calculate the distances between nodes
         NN_Classifier.compute_distances(Nodes, feature_subset)
+        
+        # compute accuracy of the given subset of features
         accuracy = Validator.Determine_Accuracy(Nodes)
-        print(f'\t accuracy of {k}-Nearest Neighbors Classifier, using features {feature_subset} features: {accuracy}')
+        print(f'\t accuracy of Nearest Neighbor Classifier, using features {feature_subset} features: {accuracy}')
 
     
 
