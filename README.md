@@ -5,7 +5,7 @@ Designed and implemented Nearest-Neighbor Classifier in Python. Using two greedy
 
 ## Instructions
 
-User must format data as a .txt file, and save data in datasets folder[^1]. All user interactions are done through a C.L.I.
+User must format data as a .txt file, and save data in datasets folder[^1]. All user interactions are done through the C.L.I.
 
 1. User prompted to input filename
    (file will not be found if not defined by the path variable,       defined in main.py)
