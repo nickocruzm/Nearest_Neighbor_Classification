@@ -1,7 +1,7 @@
-from Data import *
-from Validator import *
-from NN_Classifier import *
 from Node import Node
+from Data import *
+from NN_Classifier import *
+from Validator import *
 from Search import *
 
 if __name__ == '__main__':
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     
     
     default_Rate = default_accuracy(raw_data)
-    print(f'{filename_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
+    print(f'{fileName_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
     
 
     
@@ -44,7 +44,7 @@ if __name__ == '__main__':
         NN_Classifier.compute_distances(Nodes, feature_subset)
         
         # compute accuracy of the given subset of features
-        accuracy = Validator.Determine_Accuracy(Nodes)
+        accuracy = Determine_Accuracy(Nodes)
         print(f'\t accuracy of Nearest Neighbor Classifier, using features {feature_subset} features: {accuracy}')
 
     
