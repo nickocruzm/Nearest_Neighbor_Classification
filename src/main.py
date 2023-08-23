@@ -11,7 +11,7 @@ if __name__ == '__main__':
     raw_data = read_data(fileName)
     
     normalized_data = normalize_data(raw_data)
-    Nodes = Data_to_Nodes(normalized_data)
+    Nodes = [Node(n) for n in raw_data]
     
     
     default_Rate = default_accuracy(raw_data)
