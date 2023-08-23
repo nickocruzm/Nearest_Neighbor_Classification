@@ -3,7 +3,6 @@ from NN_Classifier import *
 import math
 
 
-
 def leave_one_out_cross_validation(Nodes,feature_subset,new_feature:int = -1):
     nearest_neighbor = None
     minimum_distance = float('inf')
