@@ -37,7 +37,7 @@ def forward_selection(raw_data, default_accuracy:float=0.0):
         if(last_best_found >= 1):
             break    
         for j in range(1,total_features+1):
-            node_set = Data_to_Nodes(raw_data)
+            node_set = [Node(n) for n in raw_data]
             new_feature = j
             if new_feature not in feature_subset:
                 accuracy = leave_one_out_cross_validation(node_set, feature_subset, new_feature)
@@ -67,7 +67,7 @@ def Backward_elimination(data, Threshold):
         dropped_feature = None
         for k in range(1,features+1):
             if k in current_features_set:
-                Nodes = Data_to_Nodes(data)
+                Nodes = [Node(n) for n in data]
                 subset = list(current_features_set[:])
                 accuracy = leave_feature_out(Nodes,subset,k)
                 
@@ -85,7 +85,7 @@ def Backward_elimination(data, Threshold):
             break
     
     print(f'\t{current_features_set}')
-    Nodes = Data_to_Nodes(data)
+    Nodes = [Node(n) for n in data]
     NN_Classifier.compute_distances(Nodes, current_features_set)
     acc = Determine_Accuracy(Nodes)
           

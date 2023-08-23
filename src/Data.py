@@ -1,5 +1,4 @@
 from Node import Node
-import numpy as np
 
 def read_data(fileName:str)-> list():
     """
@@ -8,6 +7,7 @@ def read_data(fileName:str)-> list():
         
         return: 2D Matrix
     """
+    
     matrix = []
     with open(fileName, 'r') as file:
         lines = file.readlines()
@@ -17,51 +17,44 @@ def read_data(fileName:str)-> list():
     
     return matrix
 
-def Data_to_Nodes(raw_data) -> list():
-    """
-        Turns data instances into Nodes, placing them within a container to be returned.
-    """
-    return [Node(n) for n in raw_data]
-
 def default_accuracy(raw_data) -> float:
     """
-        default accuracy := frequency of a class divided by the total number of instances.
-        returns the default accuracy of the data.        
+        runtime: O(n);
+        
+        frequency of a classification divided by the total number of instances.
+        returns the default accuracy of the data.       
     """
-    A = 0
-    B = 0
-    total_instances = len(raw_data)
+    A = 0; B = 0; total_instances = len(raw_data)
+
     for instance in range(0,total_instances): 
         if(raw_data[instance][0] == 1.0): A = A + 1
-        if(raw_data[instance][0] == 2.0): B = B + 1
+        else: B = B + 1
         
     most_frequent = max(A,B)
     return(most_frequent / total_instances)
 
 def find_min_max(matrix):
-    """       
-        return 2 arrays, of the min and max values for each column.
+    """  
+        runtime: O(n^2)
+        determines the min and max of each features.
     """
-    num_rows = len(matrix)
-    num_cols = len(matrix[0])
-
+    num_rows = len(matrix); num_cols = len(matrix[0])
     # containers to hold the minmums and maximums of each column
-    min_values = [float('inf')] * num_cols
+    min_values = [float('inf')] * num_rows
     max_values = [float('-inf')] * num_cols
 
-    # Find the min and max of each col, nested loop skips j=0, because that field contains the true instance's classification.
+    # Find the min and max of each col
+    # nested loop skips j=0, because that field contains the true instance's classification.
     for i in range(num_rows):
         for j in range(1,num_cols):
             if matrix[i][j] < min_values[j]: min_values[j] = matrix[i][j]
             if matrix[i][j] > max_values[j]: max_values[j] = matrix[i][j]
     return min_values, max_values
 
-def min_max_normalization(data):
+def normalize_data(data):
         """
-            1st closure contained in normalize_data()
-            using the minimum values and maximum values returned from find_min_max(),
-            data is normalized falling in between 0 and 1.
-            
+            runtime: O(n^2)
+            data is normalized by min and max values of each feature falling in between 0 and 1.
             returns dataset, with normalized data
         """
        
@@ -77,12 +70,3 @@ def min_max_normalization(data):
                 data[j][i] = (data[j][i] - mins[i])/(maxes[i] - mins[i])
         
         return data
-
-def normalize_data(raw_data):
-    return min_max_normalization(raw_data)
-
-def get_nearest_neighbors(distances_memory, instance):
-    """
-        for the distances in memory, retrieve the minimum distance in relative to the given instance
-    """
-    return min(distances_memory[instance])
