@@ -1,5 +1,5 @@
-import numpy as np
 from Node import Node
+import numpy as np
 
 def read_data(fileName:str)-> list():
     """
