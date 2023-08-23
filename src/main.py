@@ -5,17 +5,16 @@ from Validator import *
 from Search import *
 
 if __name__ == '__main__':
-    path = "datasets/"
-    fileName_str = input("fileName: ")
-    fileName = path + fileName_str
-    raw_data = read_data(fileName)
+    fileName = input("filename: "); filePath = "datasets/" + fileName
+    
+    raw_data = read_data(filePath)
     
     normalized_data = normalize_data(raw_data)
     Nodes = [Node(n) for n in raw_data]
     
     
     default_Rate = default_accuracy(raw_data)
-    print(f'{fileName_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
+    print(f'{fileName} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
     
 
     
