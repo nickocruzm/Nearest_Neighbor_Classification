@@ -1,5 +1,5 @@
 from Node import Node
-from Validator import Validator
+import Validator
 from NN_Classifier import *
 from Data import *
 
