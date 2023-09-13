@@ -5,7 +5,7 @@ from Validator import *
 from Search import *
 
 if __name__ == '__main__':
-    fileName = input("filename: "); filePath = "datasets/" + fileName
+    fileName = input("\n filename: "); filePath = "datasets/" + fileName
     
     raw_data = read_data(filePath)
     
