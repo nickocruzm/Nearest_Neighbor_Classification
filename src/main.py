@@ -5,10 +5,9 @@ from Validator import *
 from Search import *
 
 if __name__ == '__main__':
-    path = "datasets/"
-    fileName_str = input("fileName: ")
-    fileName = path + fileName_str
-    raw_data = read_data(fileName)
+    fileName = input("\n filename: "); filePath = "datasets/" + fileName
+    
+    raw_data = read_data(filePath)
     
     normalized_data = normalize_data(raw_data)
     Nodes = [Node(n) for n in raw_data]
