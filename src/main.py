@@ -14,7 +14,7 @@ if __name__ == '__main__':
     
     
     default_Rate = default_accuracy(raw_data)
-    print(f'{fileName} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
+    print(f'{fileName_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
     
 
     
