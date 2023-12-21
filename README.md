@@ -5,10 +5,10 @@ Designed and implemented Nearest-Neighbor Classifier in Python. Using two greedy
 
 ## Instructions
 
-User must format data as a .txt file, and save data in datasets folder[^1]. All user interactions are done through the C.L.I.
+User must format data as a .txt file, and save data in datasets folder[^1]. All user interactions are done through the command line (CLI).
 
 1. User prompted to input filename
-   (file will not be found if not defined by the path variable,       defined in main.py)
+   (ensure file is located in the defined path variable, defined in main.py)
 2. If file is found program will output the number of instances, features, and default rate [^2] of the given dataset.
 3. Choose action to perform, input the number associated with each action:
     1. Forward Selection
