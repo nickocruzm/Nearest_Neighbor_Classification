@@ -7,7 +7,7 @@ def read_data(fileName:str)-> list():
         
         return: 2D Matrix
     """
-    
+   
     matrix = []
     with open(fileName, 'r') as file:
         lines = file.readlines()

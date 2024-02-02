@@ -44,6 +44,7 @@ Two test datasets are provided:
    - DATASET[instance][feature] will locate the particular insatance and the given feature. 
 
 [^3]: The first column in each dataset are the true classifications of an instance. So there are number of features + 1 cols for each dataset.
-For more information, please visit [https://nickocruzm.com](https://nickocruzm.com/), (site is under development)
+
+
 
 
