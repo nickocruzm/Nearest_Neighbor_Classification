@@ -50,6 +50,14 @@ After applying feature selection, the features used during classification are na
    While Forward Selection provides a simple model with high accuracy, the potential of the subset features being overfitted is great. Whereas Backwards elimination does not greatly narrow down the subset of features, it does decrease the potential of overfitting which may lead to more accurate future classifications.
 
 
+## Performance
+
+![DataTable](images/dataTable.png)
+
+![largeDataset Scatterplot](images/large_scatter.png)
+
+![smallDataset Scatterplot](images/small_scatter.png)
+
 [^3]: The first column in each dataset are the true classifications of an instance. So there are number of features + 1 cols for each dataset.
 
 
