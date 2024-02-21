@@ -3,6 +3,8 @@
 ## Overview
 Designed and implemented Nearest-Neighbor Classifier in Python. Using two greedy algorithms to optimize classifier's accuracy. Normalized data with min-max normalization, accuracy computed using k-fold cross validation.
 
+![DataTable](images/dataTable.png)
+
 ## Instructions
 
 User must format data as a .txt file, and save data in datasets folder[^1]. All user interactions are done through the command line (CLI).
@@ -50,9 +52,8 @@ After applying feature selection, the features used during classification are na
    While Forward Selection provides a simple model with high accuracy, the potential of the subset features being overfitted is great. Whereas Backwards elimination does not greatly narrow down the subset of features, it does decrease the potential of overfitting which may lead to more accurate future classifications.
 
 
-## Performance
+## Scatter Plots
 
-![DataTable](images/dataTable.png)
 
 ![largeDataset Scatterplot](images/large_scatter.png)
 
