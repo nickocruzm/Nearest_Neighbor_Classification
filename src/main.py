@@ -4,17 +4,23 @@ from NN_Classifier import *
 from Validator import *
 from Search import *
 
+import logging
+logging.basicConfig(filename='data.log', filemode='w', level=logging.INFO)
+
+
 if __name__ == '__main__':
-    fileName = input("\n filename: "); filePath = "datasets/" + fileName
     
-    raw_data = read_data(filePath)
+    filePath = getFile() 
+    data = read_data(filePath)
     
-    normalized_data = normalize_data(raw_data)
-    Nodes = [Node(n) for n in raw_data]
+    normalized_data = normalize_data(data)
+    Nodes = [Node(n) for n in data]
     
     
-    default_Rate = default_accuracy(raw_data)
-    print(f'{fileName_str} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {default_Rate} \n')
+    initial_guess = default_accuracy(data)
+    
+    print(f'{filePath} contains {len(Nodes)} instances each with {len(Nodes[0].features)} Features, with a default rate of {initial_guess} \n')
+    
     
 
     
