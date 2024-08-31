@@ -15,17 +15,7 @@ Designed and implemented a Nearest-Neighbor Classifier in Python, employing two 
 ![DataTable](images/dataTable.png)
 
 
-
-Datasets are formatted as .txt files, found in the datasets dir. Users may import datasets to use classifer on, see Dataset Formatting to better understand how to format imported datasets.
-
-
-### Dataset Formatting
-   - Each row represents an instance
-   - The first column of each dataset is the instance's true label
-   - Each column after the first is represents the features of instances
-   - DATASET[instance][feature] will locate the particular insatance and the given feature.
-
-### Feature Selection
+## Feature Selection
 
    Feature Selection significantly improves the accuracy of classifiers. When comparing the accuracy results of a classifier using all features to one using a subset we often see an increase in accuracy with the subset.
    
@@ -35,6 +25,33 @@ Datasets are formatted as .txt files, found in the datasets dir. Users may impor
 
    While Forward Selection produces a simpler model with high accuracy, the risk of overfitting is higher. On the other hand, Backward Elimination, though less aggressive in reducing the feature set, minimizes the potential for overfitting, potentially leading to more accurate future classifications.
 
+## Forward Selection
+   Forward Feature Search, also known as Forward Selection, is a feature selection technique used in machine learning to improve the performance of a model by selecting the most relevant features. Here's how it works:
+
+### 1. Start with No Features:
+   The process begins with an empty model, meaning no features are initially selected.
+
+### 2. Add Features One by One:
+   At each step, the algorithm adds the feature that improves the model's performance the most. Performance is usually measured by metrics like accuracy, AUC, or another relevant criterion for the specific task.
+   The feature that, when added, provides the greatest improvement to the model's performance is kept.
+   
+### 3. Repeat Until No Improvement:
+   The process continues, adding features one at a time, until adding more features does not significantly improve the model's performance.
+   The stopping criterion can be predefined, such as a maximum number of features or a threshold for improvement.
+
+### Result:
+   The result is a model that uses only the most important features, leading to better performance and faster computations.
+
+### Advantages:
+
+   - Simplicity: It’s easy to understand and implement.
+   - Efficiency: It builds the model iteratively, avoiding the complexity of evaluating all possible feature combinations.
+
+### Disadvantages:
+
+   - Potential for Overfitting: By adding features one at a time, there’s a risk of overfitting especially if too many features are added.
+
+   - Greedy Algorithm: Since it’s a greedy algorithm, it may miss the best combination of features because it only considers adding one feature at a time rather than evaluating all possible combinations.
 
 ## Scatter Plots
 
